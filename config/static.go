@@ -33,3 +33,10 @@ func (s *Static) Validate() error {
 
 	return nil
 }
+
+// Override config.
+func (s *Static) Override(c *Config) {
+	if s.Prefix != "" {
+		c.Static.Prefix = s.Prefix
+	}
+}
